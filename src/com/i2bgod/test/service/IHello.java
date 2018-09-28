@@ -6,4 +6,5 @@ package com.i2bgod.test.service;
  */
 public interface IHello {
     void hello();
+    void sayMsg();
 }

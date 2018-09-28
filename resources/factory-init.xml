@@ -2,6 +2,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean class="com.i2bgod.test.service.impl.Hello" id="hello"></bean>
+    <bean id="helloFactory" class="com.i2bgod.test.service.IHelloFactory" >
+    </bean>
+    <bean id="hello" factory-bean="helloFactory" factory-method="newInstance">
+        <constructor-arg index="0" value="bbb"></constructor-arg>
+    </bean>
 
 </beans>
